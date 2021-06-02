@@ -110,7 +110,7 @@ function generateMarkdown(responses) {
   ${responses.test}
   
   ## Forms of Contact:
-  - If you have any questions about this application you can contact me at:
+  If you have any questions about this application you can contact me at:
   github.com/${responses.github}
   <${responses.email}>
   
