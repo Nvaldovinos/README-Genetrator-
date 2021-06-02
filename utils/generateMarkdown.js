@@ -26,14 +26,17 @@ switch(license){
     return '[![License: ODbL](https://img.shields.io/badge/License-ODbL-brightgreen.svg)](https://opendatacommons.org/licenses/odbl/)'
     break;
 
-  case 'No Liscence':
+  case 'No License':
     return ''
     break;  
 }
-// console.log('MIT')
-// console.log('GPLv3')
 // console.log('Apache')
-//
+// console.log('GPLv3')
+// console.log('MIT')
+// console.log('IBM')
+// console.log('Zlib')
+// console.log('Open Database License (ODbL)')
+// console.log('No Liscence')
 
 // A function that returns the license link
 // If there is no license, return an empty string
