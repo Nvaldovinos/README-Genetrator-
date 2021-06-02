@@ -70,20 +70,49 @@ function renderLicenseLink(license) {
 // A function that returns the license section of README
 // If there is no license, return an empty string
 function renderLicenseSection(license) {
-
+  if (license === 'MIT' || license == 'Apache' || license === 'GPLv3' || license === 'IBM' || license === 'Zlib' || license === 'Open Database License (ODbL)' ){
+    return '## License'
+  }
+  else{
+    return ''
+  }
 }
 
 // A function to generate markdown for README
 function generateMarkdown(data) {
   return `# ${data.title}
 
-# <Your Project Tittle>
+${renderLicenseBadge(data.license)} 
+${renderLicenseLink(data.license)} 
+${renderLicenseSection(data.license)}
 
-##Description
+
+## Description
+ ${data.description}
 
 ## Table of contents 
--Instalation 
+-[Instalation] 
+-[Usage]
+-[Contributions]
+-[Testing]
+-[Forms of contact]
 
+## Installation 
+${data.install}
+
+## Usage 
+${data.usage}
+
+## Contributions
+${data.contribute}
+
+## Testing
+${data.test}
+
+## Forms of Contact 
+- If you have any questions about this application you can contact me at:
+- <github.com/${data.github}>
+- <${data.email}>
 
 `;
 }
