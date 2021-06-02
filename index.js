@@ -1,11 +1,10 @@
 // Applications needed 
 const inquirer = require('inquirer');
 const fs = require('fs');
-const README = require('./utils/generateMarkdown');
+// const README = require('./utils/generateMarkdown');
 
 //Array of questions for user
-const questions = () => {
-    inquirer.prompt([
+ const questions = [
 {
     type: 'input',
     message: 'What is the title of your application? ',
@@ -19,7 +18,7 @@ const questions = () => {
 },
 
 {
-    type: 'editor',
+    type: 'input',
     message: 'Explain how to install your application: ',
     name: 'install',
 },
@@ -62,8 +61,7 @@ const questions = () => {
     name: 'email',
 },
     
-]);
-}; 
+]; 
 
 
 //Function to write README file
@@ -77,7 +75,10 @@ function writeToFile(fileName, data) {
 
 // A function to initialize app
 function init() {
-    
+    inquirer.prompt(questions).then((responses) => {
+        console.log(responses, 'responses')
+        writeToFile('README.md', responses)
+    })
 }
 
 // Function call to initialize app
