@@ -46,7 +46,7 @@ const questions = () => {
     type: 'list',
     message: 'What type of license are you using? ',
     name:  'license',
-    choices: ['MIT', 'Apache', 'GPLv3'],
+    choices: ['MIT', 'Apache', 'GPLv3', 'IBM', 'Zlib', 'Open Database License (ODbL)'],
 },
 
 {
