@@ -2,7 +2,7 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 const generateMarkdown = require('./utils/generateMarkdown');
-const path = require('path')
+// const path = require('path')
 
 //Array of questions for user
  const questions = [
@@ -78,7 +78,7 @@ function writeToFile(fileName, data) {
 function init() {
     inquirer.prompt(questions).then((responses) => {
         // console.log(responses, 'responses')
-        writeToFile('README.md', responses)
+        writeToFile('README.md', generateMarkdown(responses))
     })
 }
 

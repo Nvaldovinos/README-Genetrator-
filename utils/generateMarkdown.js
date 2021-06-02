@@ -66,7 +66,7 @@ function renderLicenseLink(license) {
   if(license === 'Open Database License (ODbL)'){
     return '[![License: ODbL](https://img.shields.io/badge/License-ODbL-brightgreen.svg)](https://opendatacommons.org/licenses/odbl/)'
   }
-
+  
   if(license === 'No Liscence'){
     return ''
   }
@@ -84,13 +84,13 @@ function renderLicenseSection(license) {
 }
 
 // A function to generate markdown for README
-function generateMarkdown(data) {
-  return `# ${data.title}
+function generateMarkdown(responses) {
+  return  `# ${responses.title}
 
-  
+  ${renderLicenseBadge(responses.license)} 
   
   ## Description
-  ${data.description}
+  ${responses.description}
   
   ## Table of contents 
   -[Instalation] 
@@ -100,25 +100,23 @@ function generateMarkdown(data) {
   -[Forms of contact]
   
   ## Installation 
-  ${data.install}
+  ${responses.install}
   
   ## Usage 
-  ${data.usage}
+  ${responses.usage}
   
   ## Contributions
-  ${data.contribute}
+  ${responses.contribute}
   
   ## Testing
-  ${data.test}
+  ${responses.test}
   
   ## Forms of Contact 
   - If you have any questions about this application you can contact me at:
-  - <github.com/${data.github}>
-  - <${data.email}>
+  - <github.com/${responses.github}>
+  - <${responses.email}>
+
   
-  ${renderLicenseBadge(data.license)} 
-  ${renderLicenseLink(data.license)} 
-  ${renderLicenseSection(data.license)}
   
   `;
 }
