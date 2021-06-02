@@ -1,12 +1,10 @@
 // Applications needed 
 const inquirer = require('inquirer');
 const fs = require('fs');
-const generateMarkdown = require('./utils/generateMarkdown');
-const { fetchAsyncQuestionPropertyQuestionProperty } = require('inquirer/lib/utils/utils');
-// const path = require('./REA');
+const README = require('./utils/generateMarkdown');
 
 //Array of questions for user
-function questions() {
+const questions = () => {
     inquirer.prompt([
 {
     type: 'input',
@@ -64,16 +62,23 @@ function questions() {
     name: 'email',
 },
     
-])}  
+]);
+}; 
 
 
-// TODO: Create a function to write README file
+//Function to write README file
 function writeToFile(fileName, data) {
-
+    fs.writeFile(fileName, data, err =>{
+        if(err){
+            return console.log(err);
+        }
+    });
 }
 
-// TODO: Create a function to initialize app
-function init() {}
+// A function to initialize app
+function init() {
+    
+}
 
 // Function call to initialize app
 init();
