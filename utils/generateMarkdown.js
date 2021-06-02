@@ -1,7 +1,8 @@
 // A function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
-function renderLicenseBadge(license) {}
-switch(license){
+function renderLicenseBadge(license) {
+switch(license)
+{
   case'Apache' :
     return '[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)'
    break;
@@ -29,6 +30,7 @@ switch(license){
   case 'No License':
     return ''
     break;  
+  }
 }
 // console.log('Apache')
 // console.log('GPLv3')
@@ -85,39 +87,40 @@ function renderLicenseSection(license) {
 function generateMarkdown(data) {
   return `# ${data.title}
 
-${renderLicenseBadge(data.license)} 
-${renderLicenseLink(data.license)} 
-${renderLicenseSection(data.license)}
-
-
-## Description
- ${data.description}
-
-## Table of contents 
--[Instalation] 
--[Usage]
--[Contributions]
--[Testing]
--[Forms of contact]
-
-## Installation 
-${data.install}
-
-## Usage 
-${data.usage}
-
-## Contributions
-${data.contribute}
-
-## Testing
-${data.test}
-
-## Forms of Contact 
-- If you have any questions about this application you can contact me at:
-- <github.com/${data.github}>
-- <${data.email}>
-
-`;
+  
+  
+  ## Description
+  ${data.description}
+  
+  ## Table of contents 
+  -[Instalation] 
+  -[Usage]
+  -[Contributions]
+  -[Testing]
+  -[Forms of contact]
+  
+  ## Installation 
+  ${data.install}
+  
+  ## Usage 
+  ${data.usage}
+  
+  ## Contributions
+  ${data.contribute}
+  
+  ## Testing
+  ${data.test}
+  
+  ## Forms of Contact 
+  - If you have any questions about this application you can contact me at:
+  - <github.com/${data.github}>
+  - <${data.email}>
+  
+  ${renderLicenseBadge(data.license)} 
+  ${renderLicenseLink(data.license)} 
+  ${renderLicenseSection(data.license)}
+  
+  `;
 }
 
 module.exports = generateMarkdown;
