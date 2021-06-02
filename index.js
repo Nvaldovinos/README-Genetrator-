@@ -32,7 +32,7 @@ const generateMarkdown = require('./utils/generateMarkdown');
 
 {   
     type: 'input',
-    message: 'How can other contribute to this apllication? ',
+    message: 'Who contributed to this apllication? ',
     name:  'contribute',
 },
 
@@ -46,7 +46,7 @@ const generateMarkdown = require('./utils/generateMarkdown');
     type: 'list',
     message: 'What type of license are you using? ',
     name:  'license',
-    choices: ['MIT', 'Apache', 'GPLv3', 'IBM', 'Zlib', 'Open Database License (ODbL)'],
+    choices: ['MIT', 'Apache', 'GPLv3', 'IBM', 'Zlib', 'Open Database License (ODbL)', 'No Liscense'],
 },
 
 {
